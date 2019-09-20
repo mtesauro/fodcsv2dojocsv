@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# Build on Linux 64-bit
+GOARCH=amd64 GOOS=linux go build
+mv fodcsv2dojocsv releases/
+
+# Build on OS-X 64-bit
+GOARCH=amd64 GOOS=darwin go build
+mv fodcsv2dojocsv releases/fodcsv2dojocsv-osx
+
+# Build on Windows 64-bit
+GOARCH=amd64 GOOS=windows go build
+mv fodcsv2dojocsv.exe releases/
+
+echo "New builds for Linux, OS-X and Windows (64-bit) are in ./releases"
